@@ -28,12 +28,3 @@ bazel_dep(
     repo_name = "io_bazel_rules_go",
 )
 bazel_dep(name = "gazelle", version = "0.45.0")
-
-switched_rules = use_extension("@com_google_googleapis//:extensions.bzl", "switched_rules")
-switched_rules.use_languages(
-    cc = True,
-    go = True,
-    grpc = True,
-    python = True,
-)
-use_repo(switched_rules, "com_google_googleapis_imports")
